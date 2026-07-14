@@ -89,33 +89,17 @@ Checklist minimal sebelum submit ke KULON:
 6. Matikan sementara server backend → pastikan muncul toast error yang informatif, bukan layar putih.
 7. Cek tampilan di layar sempit (mobile) — navbar harus berubah jadi menu hamburger.
 
-## Git Workflow (minimal 3 commit)
+## Database
+- MySQL
 
-Repo ini bisa digabung dengan repo backend yang sama, atau repo terpisah — keduanya sah menurut
-ketentuan soal. Contoh urutan commit dengan pesan standar (Conventional Commits), silakan
-sesuaikan dengan progres pengerjaan kamu yang sebenarnya:
 
-```
-feat(auth): implement login, register, and JWT-based route guards
-feat(rental): implement product listing, rental transaction modal, and unified error toast
-chore(env): add environment variable config and project documentation
-```
+## Flow Aplikasi
 
-Alur singkat:
-
-```bash
-git init                     # kalau repo baru
-git add .
-git commit -m "feat(auth): implement login, register, and JWT-based route guards"
-
-# ...lanjut kerjakan modul transaksional...
-git add .
-git commit -m "feat(rental): implement product listing, rental transaction modal, and unified error toast"
-
-# ...finishing touch, env, docs...
-git add .
-git commit -m "chore(env): add environment variable config and project documentation"
-
-git remote add origin <url-repo-kamu>
-git push -u origin main
-```
+1. Pengguna membuka aplikasi melalui browser.
+2. Pengguna melakukan registrasi atau login ke dalam sistem.
+3. Sistem melakukan autentikasi menggunakan JWT.
+4. Setelah berhasil login, pengguna dapat melihat daftar produk yang tersedia.
+5. Pengguna dapat menambahkan, mengubah, dan menghapus data produk sesuai hak akses.
+6. Pengguna memilih produk yang ingin disewa.
+7. Sistem menyimpan data penyewaan ke dalam database MySQL.
+8. Data produk dan riwayat penyewaan dapat dikelola melalui aplikasi.
